@@ -301,6 +301,7 @@ section { padding: 64px 48px; }
 .board-name { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 26px; margin-bottom: 4px; }
 .board-role { font-size: 22px; font-weight: 600; color: #444; }
 .board-school { font-size: 21px; color: #777; margin-top: 2px; }
+.board-row.reverse .board-info { margin-left: 300px; }
 
 /* ================================================================
    PLACEHOLDER BOX (used anywhere a real Google Form / Doc / Calendar
