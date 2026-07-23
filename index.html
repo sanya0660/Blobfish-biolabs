@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blobfish BioLabs</title>
+<!-- Links to the other 2 files in this project: style.css (looks) and script.js (behavior) -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       Every link below uses data-page="X" instead of a normal href.
+       script.js listens for clicks on [data-page] elements and shows
+       the matching <div class="page" id="page-X"> instead of loading
+       a new URL. That's what makes clicking these feel like going to
+       a different page, without this being more than one HTML file.
+       ============================================================ -->
+  <nav class="navbar">
+<div class="logo">
+  <img class="brand-logo" src="logo.png" alt="Blubby the blobfish logo">
+  Blobfish BioLabs
+</div>
+    <div class="nav-links">
+        <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
+      <a href="#" data-page="home">Home</a>
+      <a href="#" data-page="registration">Registration</a>
+      <a href="#" data-page="volunteers">Volunteers</a>
+
+      <!-- About dropdown: click "About" to open a small vertical menu -->
+      <div class="dropdown">
+        <div class="dropdown-trigger">
+          About
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="dropdown-menu">
+          <a href="#" data-page="about">About Us</a>
+          <a href="#" data-page="board">Our Board</a>
+          <a href="#" data-page="schedule">Our Schedule</a>
+        </div>
+      </div>
+
+</div>
+
+    <div class="mobile-icon-row">
+      <div class="nav-icons">
+        <a href="https://www.instagram.com/blobfishbiolabs/" target="_blank" rel="noopener">
+          <img class="social-icon instagram" src="instagram.png" />
+        </a>
+        <a href="https://www.youtube.com/channel/UC-XrC_RLzyTS1BCvrNfjd7w" target="_blank" rel="noopener">
+          <img class="social-icon youtube" src="youtube.png" />
+        </a>
+      </div>
+      <button class="hamburger" aria-label="Menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  
+
+  <!-- ================================================================
+       ALL SIX "PAGES" LIVE BELOW, EACH IN ITS OWN <div class="page">.
+       Only one is visible at a time — see script.js + style.css.
+       ================================================================ -->
+
+  <!-- ============ PAGE: HOME ============ -->
+  <div class="page active" id="page-home">
+
+    <!-- HERO: the big full-screen banner at the very top of Home -->
+    <section class="hero section-pink-light">
+      <div class="hero-text">
+        <!-- <br> tags force this onto exactly 3 lines, per request -->
+        <h1>Making biology<br>fun for anyone,<br>everywhere.</h1>
+        <div class="hero-actions">
+          <a href="mailto:blobfishbiolabs@gmail.com" class="btn btn-outline">Contact us</a>
+          <a href="#" data-page="registration" class="btn btn-fill">Register now</a>
+        </div>
+      </div>
+      <!-- Just plain text for now — swap this div's contents for a real Blubby image/SVG later -->
+<div class="hero-visual">
+  <img src="blubby_home.png" alt="Blubby the blobfish" style="max-width:100%; height:auto;">
+</div>
+    </section>
+    
+
+    <!-- MISSION + FAQ ACCORDION -->
+    <section class="section-blue">
+      <div class="two-col">
+        <div>
+          <h2 style="margin-bottom:16px;">Our mission</h2>
+          <p>Blobfish BioLabs is a youth-led Bay Area-based 501(c)(3) nonprofit organization. We host 4-week hands-on biology programs for children 3rd through 8th grade.</p>
+          <div class="pic-frame" style="margin-top:20px;"><!-- placeholder image block: swap for a real <img> tag once you have real photos -->
+<svg viewBox="0 0 400 220" style="display:block;width:100%;" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="220" fill="#acd4ea"/>
+  <ellipse cx="200" cy="280" rx="260" ry="80" fill="#caf47d"/>
+  <circle cx="320" cy="45" r="22" fill="#ffffff" opacity="0.85"/>
+  <circle cx="350" cy="52" r="15" fill="#ffffff" opacity="0.85"/>
+  <text x="200" y="110.0" font-family="Quicksand, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle" opacity="0.55">photo: kids learning</text>
+</svg></div>
+        </div>
+        <div>
+          <h2 style="margin-bottom:16px;">Questions</h2>
+
+          <!-- Each <details> is a self-contained FAQ dropdown, no JS needed -->
+          <details class="faq-item" open>
+<summary>How are we special?
+  <span class="chev-circle">
+    <svg width="12" height="7" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </span>
+</summary>
+            <div class="faq-body">In each lesson, kids get to apply their knowledge through experiments and plan out in-class projects. By registering your kids, you help fund local hospitals: UCSF Benioff Children's Hospital, Lucile Packard Children's Hospital, and more.</div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How long are classes?
+            <span class="chev-circle">
+    <svg width="12" height="7" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </span>
+            </summary>
+            <div class="faq-body">For elementary schoolers (3rd - 5th grade), classes run from 2:00 - 3:00pm. For middle schoolers (6th - 8th grade), classes run from 3:15 - 4:30pm.</div>
+          </details>
+
+          <details class="faq-item">
+            <summary>When and where are the classes?
+<span class="chev-circle">
+    <svg width="12" height="7" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </span>
+            </summary>
+            <div class="faq-body">Classes are located at Independence High School, Room D202, every Saturday.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN US: tutor vs. register columns -->
+    <section class="section-yellow">
+        <!-- On the Home page, find the "Join us" section and add this class -->
+<section class="section-yellow join-us-section">
+      <h2 style="text-align:center; margin-bottom:40px;">Join us</h2>
+      <div class="two-col">
+        <div>
+          <h3 style="margin-bottom:14px;">Become a tutor today</h3>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; font-size:14px;">
+            <li>&#8594; Lead a group of 3-5 kids</li>
+            <li>&#8594; Help set up lessons</li>
+            <li>&#8594; Write project slideshows</li>
+            <li>&#8594; Flexible to school schedules</li>
+          </ul>
+          <a href="#" data-page="volunteers" class="btn btn-outline" style="display:inline-block; margin-top:20px;">Volunteer with us</a>
+        </div>
+        <div>
+          <h3 style="margin-bottom:14px;">Register for your kid</h3>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; font-size:14px; ">
+            <li>&#8594; Get real experience in biology</li>
+            <li>&#8594; Explore how life works</li>
+            <li>&#8594; Connect with in-person mentors</li>
+            <li>&#8594; Learn how to conduct experiments</li>
+          </ul>
+          <a href="#" data-page="registration" class="btn btn-fill" style="display:inline-block; margin-top:20px;">Register now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS: video/photo placeholders -->
+    <section class="section-pink">
+      <h2 style="text-align:center; margin-bottom:32px;">Projects</h2>
+      <div class="two-col">
+        <div class="pic-frame"><!-- placeholder image block: swap for a real <img> tag once you have real photos -->
+<svg viewBox="0 0 400 180" style="display:block;width:100%;" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="180" fill="#acd4ea"/>
+  <ellipse cx="200" cy="240" rx="260" ry="80" fill="#caf47d"/>
+  <circle cx="320" cy="45" r="22" fill="#ffffff" opacity="0.85"/>
+  <circle cx="350" cy="52" r="15" fill="#ffffff" opacity="0.85"/>
+  <text x="200" y="90.0" font-family="Quicksand, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle" opacity="0.55">video: project 1</text>
+</svg></div>
+        <div class="pic-frame"><!-- placeholder image block: swap for a real <img> tag once you have real photos -->
+<svg viewBox="0 0 400 180" style="display:block;width:100%;" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="180" fill="#acd4ea"/>
+  <ellipse cx="200" cy="240" rx="260" ry="80" fill="#caf47d"/>
+  <circle cx="320" cy="45" r="22" fill="#ffffff" opacity="0.85"/>
+  <circle cx="350" cy="52" r="15" fill="#ffffff" opacity="0.85"/>
+  <text x="200" y="90.0" font-family="Quicksand, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle" opacity="0.55">video: project 2</text>
+</svg></div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ PAGE: REGISTRATION ============ -->
+  <div class="page" id="page-registration">
+
+    <section class="section-pink" style="text-align:center;">
+      <h1 style="margin-bottom:12px;">Registration <img src="blubby_icon_4.png" alt="Blubby" style="height:48px; vertical-align:middle; margin-left:10px;"></h1>
+      <p style="max-width:520px; margin:0 auto;">At Blobfish BioLabs, we believe fun and science go hand-in-hand.</p>
+    </section>
+
+    <section class="section-blue">
+      <div style="max-width:640px; margin:0 auto; text-align:center;">
+        <p style="margin-bottom:20px;">Please register using the form below.</p>
+        <!-- Replace this box with a real embedded Google Form when you have the link -->
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfGJ0CCsukPrizy6eUdJMrNK4AeUXnq7zaZtxqIAMPbzHmUQA/viewform?embedded=true" width="100%" height="600" style="border:2px solid var(--black); border-radius:14px;">Loading form...</iframe>
+  
+      </div>
+    </section>
+
+    <section class="section-green">
+      <div style="max-width:640px; margin:0 auto;">
+        <h2 style="margin-bottom:16px; text-align:center;">Program details</h2>
+        <!-- Replace this box with a real embedded Google Doc when you have the link -->
+<iframe src="https://docs.google.com/document/d/1YkLSGEwoMZZS_HUBURPXRXIrd5A11iDdQqVDUgQ54z0/preview" width="100%" height="500" style="border:2px solid var(--black); border-radius:14px;">Loading document...</iframe>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ PAGE: VOLUNTEERS ============ -->
+  <div class="page" id="page-volunteers">
+
+    <section class="section-pink" style="text-align:center;">
+      <h1>Volunteers <img src="blubby_icon_3.png" alt="Blubby" style="height:120px; vertical-align:middle; margin-left:10px;"></h1>
+    </section>
+
+    <section class="section-blue">
+      <div style="max-width:680px; margin:0 auto;">
+        <h2 style="margin-bottom:16px;">Why tutor?</h2>
+        <p style="margin-bottom:16px;">As a tutor at Blobfish BioLabs, you'll help kids learn about biology in real time while earning community service hours. Your tasks as a member include:</p>
+        <ul style="padding-left:20px; font-size:14px; display:flex; flex-direction:column; gap:6px; margin-bottom:24px;">
+          <li>Attending normal program or special events</li>
+          <li>Leading a group of 4-6 kids during slideshows and experiments</li>
+          <li>Setting up and cleaning up our event venue</li>
+          <li>Creating online project and experiment slideshows for our curriculum</li>
+        </ul>
+        <p style="margin-bottom:16px; font-weight:600;">To begin your journey as a tutor, sign up as a member here:</p>
+        <!-- Replace this box with a real embedded tutor sign-up form -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfu_TflE2fLoogGudG8CTBvfsUFp-chUL7vPvSvovtKgFFBQQ/viewform?embedded=true" width="100%" height="600" style="border:2px solid var(--black); border-radius:14px;">Loading form...</iframe>
+      </div>
+    </section>
+
+    <section class="section-green">
+      <div style="max-width:680px; margin:0 auto;">
+        <h2 style="margin-bottom:16px;">Log your hours</h2>
+        <p style="margin-bottom:16px;">Log your hours as soon as your task has ended to help confirmation go smoothly. Give us up to two days to email you a confirmation. If you haven't received the email, please contact blobfishbiolabs@gmail.com.</p>
+        <!-- Replace this box with a real embedded hour-log form -->
+       <iframe src="https://docs.google.com/forms/d/1EvBwHsfd99TBqsCAleE7ku6GD5XRMLgmhXN3KE8tzM0/viewform?embedded=true" width="100%" height="600" style="border:2px solid var(--black); border-radius:14px;">Loading form...</iframe>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ PAGE: ABOUT ============ -->
+  <div class="page" id="page-about">
+
+    <section class="section-pink" style="text-align:center;">
+      <h1>About Us <img src="blubby_icon_2.png" alt="Blubby" style="height:150px; vertical-align:middle; margin-left:10px;"></h1>
+    </section>
+
+    <section class="section-blue">
+      <!-- Fill in real numbers here once you have them -->
+      <div class="stat-row">
+        <div class="stat-card" style="background:#fdd2e5;"><div class="stat-number">&mdash;</div><div class="stat-label">students served</div></div>
+        <div class="stat-card" style="background:#f1e563;"><div class="stat-number">&mdash;</div><div class="stat-label">lessons held</div></div>
+        <div class="stat-card" style="background:#caf47d;"><div class="stat-number">$&mdash;</div><div class="stat-label">raised</div></div>
+      </div>
+
+      <div class="two-col" style="margin-bottom:32px;">
+        <div class="pic-frame"><!-- placeholder image block: swap for a real <img> tag once you have real photos -->
+<svg viewBox="0 0 400 220" style="display:block;width:100%;" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="220" fill="#acd4ea"/>
+  <ellipse cx="200" cy="280" rx="260" ry="80" fill="#caf47d"/>
+  <circle cx="320" cy="45" r="22" fill="#ffffff" opacity="0.85"/>
+  <circle cx="350" cy="52" r="15" fill="#ffffff" opacity="0.85"/>
+  <text x="200" y="110.0" font-family="Quicksand, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle" opacity="0.55">photo: program</text>
+</svg></div>
+        <div>
+          <p>Blobfish BioLabs is a Bay Area-based outreach organization primarily led by high school students. It hosts 4-week biology programs for elementary school (3rd - 5th grade) and middle school students (6th - 8th grade), where they learn important medical and anatomical concepts through slideshows and experiments. Extra funds raised support local hospitals, including UCSF Benioff Children's Hospital and Lucile Packard Children's Hospital.</p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <p>Blobfish BioLabs' main mission is to introduce science, medical, and biology concepts to the Bay Area community through inexpensive programs that feature interactive experiments. BioLabs targets primarily low-income and underserved areas, while welcoming people from all backgrounds to participate in our programs.</p>
+        </div>
+        <div class="pic-frame"><!-- placeholder image block: swap for a real <img> tag once you have real photos -->
+<svg viewBox="0 0 400 220" style="display:block;width:100%;" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="220" fill="#acd4ea"/>
+  <ellipse cx="200" cy="280" rx="260" ry="80" fill="#caf47d"/>
+  <circle cx="320" cy="45" r="22" fill="#ffffff" opacity="0.85"/>
+  <circle cx="350" cy="52" r="15" fill="#ffffff" opacity="0.85"/>
+  <text x="200" y="110.0" font-family="Quicksand, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle" opacity="0.55">photo: program</text>
+</svg></div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ PAGE: BOARD ============ -->
+  <div class="page" id="page-board">
+
+    <section class="section-pink" style="text-align:center;">
+      <h1>Our Board <img src="blubby_icon_1.png" alt="Blubby" style="height:180px; vertical-align:middle; margin-left:100px;"></h1>
+    </section>
+    
+
+    <section class="section-blue">
+      <h2 style="text-align:center; margin-bottom:40px;">2026 - 2027 officers</h2>
+      
+
+      <!-- Each board_row() alternates text-left/photo-right and photo-left/text-right -->
+      <div class="board-row">
+       <div class="board-photo">
+  <img src="Jared.png" alt="Jared Wong">
+</div>
+        <div class="board-info">
+          <div class="board-name">Jared Wong</div>
+          <div class="board-role">President</div>
+          <div class="board-school">Milpitas High School</div>
+          <div class="board-school">Junior</div>
+          
+        </div>
+      </div>
+      <div class="board-row reverse">
+       <div class="board-photo">
+  <img src="Quynh.png" alt="Quynh Nguyen">
+</div>
+        <div class="board-info">
+          <div class="board-name">Quynh Nguyen</div>
+          <div class="board-role">Vice President</div>
+          <div class="board-school">Milpitas High School</div>
+          <div class="board-school">Junior</div>
+          
+        </div>
+      </div>
+      <div class="board-row">
+       <div class="board-photo">
+  <img src="E.png" alt="Evelyn Maria">
+</div>
+        <div class="board-info">
+          <div class="board-name">Evelyn Maria</div>
+          <div class="board-role">Secretary</div>
+          <div class="board-school">Milpitas High School</div>
+          <div class="board-school">Junior</div>
+          
+        </div>
+      </div>
+      <div class="board-row reverse">
+       <div class="board-photo">
+  <img src="Sanya.png" alt="Sanya Mandraha">
+</div>
+        <div class="board-info">
+          <div class="board-name">Sanya Mandraha</div>
+          <div class="board-role">Treasurer</div>
+          <div class="board-school">Milpitas High School</div>
+          <div class="board-school">Junior</div>
+          
+        </div>
+      </div>
+      <div class="board-row">
+        <div class="board-photo">
+  <img src="K.png" alt="Karmann Chan">
+</div>
+        <div class="board-info">
+          <div class="board-name">Karmann Chan</div>
+          <div class="board-role">Head Publicist</div>
+          <div class="board-school">Evergreen High School</div>
+          <div class="board-school">Junior</div>
+          
+        </div>
+      </div>
+      <div class="board-row reverse">
+        <div class="board-photo">photo</div>
+        <div class="board-info">
+          <div class="board-name">Still looking for one!</div>
+          <div class="board-role">Vice Publicist</div>
+          <div class="board-school"> High School</div>
+          
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ PAGE: SCHEDULE ============ -->
+  <div class="page" id="page-schedule">
+
+    <section class="section-pink" style="text-align:center;">
+      <h1>Our schedule <img src="blubby_icon_5.png" alt="Blubby" style="height:180px; vertical-align:middle; margin-left:10px;"></h1>
+    </section>
+
+    <section class="section-blue">
+      <div style="max-width:680px; margin:0 auto;">
+        <!-- Replace this box with a real embedded Google Calendar -->
+<iframe src="https://calendar.google.com/calendar/u/1/r/month/2026/6/1?pli=1" width="100%" height="500" style="border:2px solid var(--black); border-radius:14px;">Loading calendar...</iframe>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- ============================================================
+       FOOTER — shown on every page
+       ============================================================ -->
+  <footer>
+    Copyright&copy; 2026 Blobfish BioLabs - All rights reserved.
+  </footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
